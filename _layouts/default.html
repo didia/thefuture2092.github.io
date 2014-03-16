@@ -72,6 +72,7 @@
 		 font-family: 'Berkshire Swash', cursive;
 	 }
 	 .container{
+		 margin-top:0px;
 		 padding-right:0px;
 		 padding-left:0px;
 		 
@@ -113,6 +114,15 @@
 		 display:none;
 		 padding:3px;
 	 }
+	 @media screen and (max-width: 780px) {
+  		.navigation{
+			display:none;
+		}
+		.nav-link-name{
+		 display:inline;
+		 padding:3px;
+	 }
+	}
 div.content {
   background:white;
   padding:70px 60px;
@@ -510,6 +520,7 @@ footer {
   body { zoom: 0.9; width: 680px; }
   header { margin:0; }
   footer { margin:5% 0; }
+  
 }
 @media screen and (min-width: 780px) {
   body { zoom: 1; }
