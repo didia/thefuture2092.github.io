@@ -8,14 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% endif %}
     <link href='http://fonts.googleapis.com/css?family=Poly:400,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
         <link rel="alternate" type="application/atom+xml" title="Aristote Diasonama" href="http://feeds.feedburner.com/hunch">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="http://www.gravatar.com/avatar/7b0fbb3309750e66793f0ab1468ec00a?s=20">
     <link rel="apple-touch-icon-precomposed" href="/res/apple-touch-icon-57x57-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/res/apple-touch-icon-{% if page.ios_app_name %}{{page.ios_app_name}}-{% endif %}72x72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/res/apple-touch-icon-114x114-precomposed.png">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@rsms">
+    <meta name="twitter:site" content="@aristodj">
     {% if page.ios_app_name %}
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -32,7 +33,7 @@
       <meta name="og:description" content="{{ content | strip_html | truncatewords: 25 }}">
       {% endif %}
     {% else %}
-      <meta name="description" content="The dream by Aristote Diasonama(thefuture2092), a congolese developper">
+      <meta name="description" content="Tu penses que impossible est un mot qui mérite d'exister dans ta vie? penses encore!!!!">
     {% endif %}
     {% if page.og_image_url %}
     <meta property="og:image" content="{{ page.og_image_url }}">
@@ -62,10 +63,13 @@
 	 .presentation{
 		 padding-left: 60px;
 		 padding-right: 60px;
-		 padding-top: 48px;
+		 padding-top: 30px;
 		 padding-bottom: 48px;
 		 background-color:#eee;
 		 box-sizing: border-box;
+	 }
+	 .presentation h2{
+		 font-family: 'Berkshire Swash', cursive;
 	 }
 	 .container{
 		 padding-right:0px;
@@ -76,16 +80,28 @@
 		 background:white;
 		 padding-left:0px;
 		 padding-right:0px;
+		 min-height:800px;
 	 }
 	 .navigation{
-		padding-top:17%;
+		padding-top:14%;
 		padding-right:0;
 		text-align:right;
 		
 	 }
 	 .navigation ul{
-		float:right;
-		width:auto
+		width:auto;
+		
+	 }
+	 .navigation ul li{
+		 text-align:right;
+		 display:block;
+		 float:right;
+		 
+	 }
+	 .navigation ul br{
+		 display:block;
+		 margin:20px 0;
+		 line-height:20px;
 	 }
 	 .sidebar{
 		padding-left:0;
@@ -93,7 +109,11 @@
 		padding-top:17%;
 		 
 	 }
-	 div.content {
+	 .nav-link-name{
+		 display:none;
+		 padding:3px;
+	 }
+div.content {
   background:white;
   padding:70px 60px;
   margin-bottom:60px;
@@ -109,8 +129,7 @@ div.content.photo {
     margin-top:0; font-size:300%;
   }
   
-  div.content img, div.content iframe { display:block; max-width:100%; margin:1em 0; }
-  div.content iframe { border:none; }
+  div.content img{ display:block; max-width:100%; margin:1em 0; }
   div.content *[align=right] { margin:0 0 1em 1em; }
   div.content *[align=left] { margin:0 1em 1em 0; }
 
@@ -320,24 +339,7 @@ div.content.photo-post {
     padding: 40px 0 0 0;
     margin:0;
   }
-/*div.content.photo-post {
-  padding: 0 0 30px 0;
-  margin:0 0 70px 0;
-}
-  div.content.photo-post p, div.content.photo-post iframe {
-    padding: 40px 40px 0 40px;
-    margin:0;
-  }
-  div.content.photo-post img {
-    display:block;
-    padding:0 0 10px 0;
-    margin:0;
-  }
-  div.content.photo-post p.datetime {
-    color:#ccc;
-  }*/
 
-/* --------------------------------------------------------------------------------------------- */
 /* posts */
 
 div.post {
@@ -510,28 +512,35 @@ footer {
   footer { margin:5% 0; }
 }
 @media screen and (min-width: 780px) {
-  body { zoom: 1.3; }
+  body { zoom: 1; }
+}
+#sidebar { display:none; }
+@media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {
+  body { zoom: 1; width:100%; font-family: 'Poly', georgia; }
 }
 
 	</style>
   </head>
   	<body>
   	<div class="container">
+    	<iframe id="sidebar"></iframe>
     	<div class="row">
         <div class=" col-xs-12 col-md-2 navigation">
         
         <ul class="navigation nav nav-pills nav-stacked">
-        <li class="active"><a href="/"><span class="glyphicon glyphicon-home"></span><span class="hidden">Home</span></a></li>
-        <li> <a href="#"><span class="glyphicon glyphicon-user"></span> <span class="hidden"> About me </span></a></li>
-        <li> <a href="#"><span class="glyphicon glyphicon-briefcase"></span><span class="hidden"> Projects </span></a></li>
-        <li> <a href="#"><span class="glyphicon glyphicon-phone-alt"></span><span class="hidden"> Contacts </span></a></li>
+        <li class="nav-link {% if page.title == 'home' %}active{% endif %}"><a href="/"><span class="glyphicon glyphicon-home">  </span><span class="nav-link-name">Home</span></a></li><br/><br/><br/>
+        <li class="nav-link {% if page.url contains '/about/' %}active{% endif %}"> <a href="/about/"><span class="glyphicon glyphicon-user">  </span><span class="nav-link-name">About me </span></a></li><br/><br/><br/>
+        <li class="nav-link {% if page.url contains '/projects/' %}active{% endif %}"> <a href="/projects/"><span class="glyphicon glyphicon-briefcase">  </span><span class="nav-link-name">Projects </span></a></li><br/><br/><br/>
+        <li class="nav-link {% if page.url contains '/contacts/' %}active{% endif %}"> <a href="/archive/"><span class="glyphicon glyphicon-folder-open">  </span><span class="nav-link-name">Archives </span></a></li><br/>
         </ul>
         
         </div>
-    	<div class="milieu col-xs-12 col-md-8">
+    	<div class="milieu col-xs-12 col-md-9">
         <div class="presentation">
-		  <h2> From Kinshasa To Silicon Valley: Following my dream! </h2>
-          <p> Here I will blog about my journey towards Silicon Valley, my failures, successes, everything I learn on my way. Hopefully those will help someone else to follow his dreams too! </p>  
+        <img src="http://www.gravatar.com/avatar/7b0fbb3309750e66793f0ab1468ec00a?s=200" align="right">
+		  <h2> Lokole ya Didia! </h2>
+          
+Hi, I'm Didia Aristote Diasonama (thefuture2092) and welcome to my blog.<br>There are definetely some stuffs going on in my head and I can't keep it for me no more. This is the place I will be pooring it all. <a href="/about/">More about me</a>
         </div>
         <div class="contenu">
         
@@ -549,7 +558,7 @@ footer {
         </div>
        
         </div>
-        <div class="sidebar col-xs-12 col-md-2">
+        <div class="sidebar col-xs-12 col-md-1">
         </div>
          
     </div>
@@ -559,7 +568,7 @@ footer {
       <p>
         <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US" class="cc"><img src="/images/cc-cc.png" class="cc">
         <img src="/images/cc-by.png" class="cc"></a>
-        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons License</a>
+        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons License</a>. Inspired by <a href="http://rsms.me/">Rasmus Andersson</a>
       </p>
     </footer>
     </center>
@@ -569,5 +578,15 @@ footer {
     
     {% include prettify.html %}
     {% include analytics.html %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+   <script>
+   $('.nav-link').hover(
+   function(){
+	   $(this).find('span.nav-link-name').show(600);
+   },
+   function(){
+	   $(this).find('span.nav-link-name').hide(500);
+   });
+   </script>
   </body>
 </html>
