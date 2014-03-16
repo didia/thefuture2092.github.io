@@ -8,7 +8,7 @@ category: all
 comments: yes
 ---
 
-<img src="/images/excited.jpg" width="50%" align="right">
+<img src="http://www.didia.me/images/excited.jpg" width="50%" align="right">
 I'm very excited to let you know that I'm starting blogging here.
 
 It's almost a year since the day I decided I had to reach Silicon valley. Since that day, I worked so hard and my work has culmunated in my website <a href="http://www.eventbuck.com">Eventbuck</a>, a new part-time job at Laval University as a web developper and last but not least, an internship this summer at the best in the field of Business Intelligence for the Talent Marketplace, <a href="http://www.wantedanalytics.com"> Wanted Technologies </a>.
