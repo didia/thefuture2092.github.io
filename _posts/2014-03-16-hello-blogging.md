@@ -1,7 +1,7 @@
 ---
 title: "Hello, Blogging!"
 description: "I'm very excited to let you know that I'm starting blogging. Yes these two years have been the most wondeful and accomplished for me. I have learned and grown so much as a person. Now I want to share my experiences with you. I want you to know my ups and downs so you can be able to do better than I did. I will be blogging every week, talking about the things I'm learning, the technologies I'm discovering and whatever the hell I'm going through. "
-og_image_url: "/images/excited.jpg"
+og_image_url: "http://www.didia.me/images/excited.jpg"
 layout: post
 tags: Aristoe, Blogging
 category: all
