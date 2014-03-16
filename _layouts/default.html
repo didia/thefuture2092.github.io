@@ -1,0 +1,573 @@
+<!DOCTYPE HTML>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <title>{% if page.title %}{{ page.title }} &mdash; {% endif %}Didia Aristote</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    {% if page.title != "Archive (sidebar)" %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% endif %}
+    <link href='http://fonts.googleapis.com/css?family=Poly:400,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="alternate" type="application/atom+xml" title="Aristote Diasonama" href="http://feeds.feedburner.com/hunch">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="/res/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/res/apple-touch-icon-{% if page.ios_app_name %}{{page.ios_app_name}}-{% endif %}72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/res/apple-touch-icon-114x114-precomposed.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@rsms">
+    {% if page.ios_app_name %}
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    {% endif %}
+    <meta property="fb:admins" content="728642302">
+    <meta property="fb:app_id" content="38027689216">
+    {% if page.title %}
+    <meta property="og:title" content="{{ page.title }}">
+      {% if page.description %}
+      <meta name="description" content="{{ page.description }}">
+      <meta name="og:description" content="{{ page.description }}">
+      {% else if content %}
+      <meta name="description" content="{{ content | strip_html | truncatewords: 25 }}">
+      <meta name="og:description" content="{{ content | strip_html | truncatewords: 25 }}">
+      {% endif %}
+    {% else %}
+      <meta name="description" content="The dream by Aristote Diasonama(thefuture2092), a congolese developper">
+    {% endif %}
+    {% if page.og_image_url %}
+    <meta property="og:image" content="{{ page.og_image_url }}">
+    {% else %}
+    {% if page.photo_url %}
+    <meta property="og:image" content="{{ page.photo_url }}">
+    {% endif %}
+    {% endif %}
+    <meta property="og:url" content="http://thefuture2092.github.io{{ page.url | remove_first:'index.html' }}">
+    <meta property="og:site_name" content="rsms.me">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="en_GB" />
+    {% if page.date %}
+    <meta property="article:published_time" content="{{ page.date | date: "%Y-%m-%d" }}">
+    {% endif %}
+    {% if page.title != "Archive (sidebar)" %}
+    {% include sidebar_ui_controller.html %}
+    {% endif %}
+    {% if page.include_move %}
+    <script src="http://movelang.org/move.js"></script>
+    {% endif %}
+    <style>
+	 body{
+		 
+		 background:#333;
+	 }
+	 .presentation{
+		 padding-left: 60px;
+		 padding-right: 60px;
+		 padding-top: 48px;
+		 padding-bottom: 48px;
+		 background-color:#eee;
+		 box-sizing: border-box;
+	 }
+	 .container{
+		 padding-right:0px;
+		 padding-left:0px;
+		 
+	 }
+	 .milieu{
+		 background:white;
+		 padding-left:0px;
+		 padding-right:0px;
+	 }
+	 .navigation{
+		padding-top:17%;
+		padding-right:0;
+		text-align:right;
+		
+	 }
+	 .navigation ul{
+		float:right;
+		width:auto
+	 }
+	 .sidebar{
+		padding-left:0;
+		margin-left:0px;
+		padding-top:17%;
+		 
+	 }
+	 div.content {
+  background:white;
+  padding:70px 60px;
+  margin-bottom:60px;
+}
+div.content.full-bleed {
+  padding:0;
+}
+div.content.photo {
+  padding: 0;
+  margin:0;
+}
+  div.content:not(.sub) h1:first-child {
+    margin-top:0; font-size:300%;
+  }
+  
+  div.content img, div.content iframe { display:block; max-width:100%; margin:1em 0; }
+  div.content iframe { border:none; }
+  div.content *[align=right] { margin:0 0 1em 1em; }
+  div.content *[align=left] { margin:0 1em 1em 0; }
+
+  /*div.post strong { font-weight:inherit; background:#FBF4B1; }*/
+  div.content li { margin-left: 2em; margin-bottom:0.3em; }
+  div.content ul > li { margin-left:1.4em; }
+  
+  div.content blockquote {
+    font-family: 'Poly', georgia;
+    font-style:italic;
+    line-height:1.618;
+    background:transparent url(quotation-mark.png) no-repeat scroll 25px 1.4em;
+    padding:0.1em 1em 0.1em 60px;
+    margin:1.618em 0 1.618em -60px;
+    color: #666055;
+    text-rendering: optimizelegibility;
+  }
+  div.content div.quotation blockquote { margin-left:-30px; }
+  div.content pre {
+    /*background-color:#f9f8fa;
+    border-top: 1px solid #f0f2f4;
+    border-bottom: 1px solid #f0f2f4;
+    padding:0.4em 0 0.4em 60px;
+    margin-left:-60px;*/
+    
+    border-left:10px solid #C6F9FC;
+    margin-left:-60px;
+    padding:0.1em 0 0.4em 50px;
+    /*background-color:#faf9f8;*/
+    
+    overflow-x: auto;
+  }
+  div.content code {
+    background-color: #f6f9fa;
+    color:black;
+    /*border: 1px solid #eaeaea;*/
+    border-radius: 3px;
+    padding:0 0.3em;
+  }
+  div.content pre > code {
+    padding:0;
+    background-color:transparent;
+    border:none;
+    border-radius: none;
+  }
+  div.content *:target { background:#fe0; }
+  div.content sup:target a { padding:2px 5px; }
+  div.content div.footnotes li { color:#999; }
+  div.content div.footnotes li:target { background:#ffc; color:inherit; }
+  
+  /* wide objects */
+  /* this is b0rked */
+  /*div.content *[alt~="fullbleed"] {
+    position: relative;
+    left:-11%; right:-20%;
+  }
+  div.content *[alt~="large"] {
+    max-width:1024px;
+    margin-left:-180px;
+  }*/
+
+/*div.content { border-bottom:2px solid #D1D1D1; }*/
+
+div.content.sub {
+  margin-top:-50px;
+  padding-top:20px;
+}
+
+/* --------------------------------------------------------------------------------------------- */
+/* intro on first page */
+
+div.content.intro {
+  padding: 40px;
+}
+
+/* --------------------------------------------------------------------------------------------- */
+/* posts */
+
+div.posts div.end {
+  padding:40px;
+  text-align:center;
+}
+/* --------------------------------------------------------------------------------------------- */
+/* post excerpt */
+/* Wrapped in a div.content.full-bleed */
+
+a.post-excerpt {
+  display: block;
+  color: inherit;
+  border-bottom: 4px solid #ddd;
+}
+  a.post-excerpt div.padded-content {
+    display: block;
+    padding: 40px;
+  }
+  a.post-excerpt div.grid-mask { display:none; }
+  a.post-excerpt.photo {
+    height:320px;
+  }
+    /*a.post-excerpt.photo div.padded-content {
+      display: -webkit-box; display: -moz-box; display: box;
+      -webkit-box-orient: vertical; -moz-box-orient: vertical; box-orient: vertical;
+      -webkit-box-pack: end; -moz-box-pack: end; box-pack: end;
+    }*/
+    a.post-excerpt.photo div.title {
+      padding:10px 40px;
+      font-size: 300%;
+      font-weight: 100;
+      color: white;
+      /*background:rgba(255,200,0,0.1);*/
+      -webkit-text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+      -moz-text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+      text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+      position: absolute;
+      left:0; right:0; bottom:0;
+      z-index:2;
+    }
+    a.post-excerpt.photo div.padded-content {
+      padding:0;
+      width:100%;
+      height:100%;
+      background: transparent no-repeat center center scroll;
+      position: relative;
+    }
+    a.post-excerpt.photo div.padded-content div.image {
+      position: absolute;
+      left:0; top:0; right:0; bottom:0;
+      z-index:1;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    a.post-excerpt.photo:hover div.padded-content {
+      opacity: 1;
+    }
+    a.post-excerpt.photo:hover div.padded-content div.image {
+      opacity:0.5;
+    }
+
+  @media screen and (min-width: 680px) {
+    a.post-excerpt {
+      position:relative;
+      display: block;
+      width:50%; /* 680/2 */
+      /*height:180px;*/
+      overflow-y: hidden;
+      float:left;
+      border:none;
+      margin-bottom:10px;
+      /*background:#eee;*/
+      /*-webkit-transform: translate3d(0,0,0);*/
+    }
+    a.post-excerpt.photo {
+      height:340px;
+    }
+      a.post-excerpt.photo div.padded-content {
+        padding:0;
+        width:100%;
+        height:100%;
+        background: transparent no-repeat center center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+      a.post-excerpt.photo:hover div.padded-content {
+        opacity:0.9;
+      }
+  } /* END @media screen and (min-width: 680px) */
+  
+  /*@media screen and (min-width: 480px) {
+    a.post-excerpt {
+      width:50%;
+    }
+  }*/
+
+  a.post-excerpt:hover {
+    color:white;
+    background:#444;
+    text-decoration:none;
+  }
+
+  a.post-excerpt div.title {
+    font-weight: bold;
+  }
+
+  a.post-excerpt info {
+    display:inline-block;
+    padding-right:8px;
+    color:#999;
+    font-style:italic;
+    /*margin-bottom:3em;*/
+  }
+
+/* --------------------------------------------------------------------------------------------- */
+/* photo post */
+
+div.content.photo-post {
+  padding-top: 60px;
+}
+  div.content.photo-post p:first-child, div.content.photo-post img:first-child {
+    padding-top:0;
+    margin-top:0;
+  }
+  div.content.photo-post p, div.content.photo-post iframe {
+    padding: 40px 0 0 0;
+    margin:0;
+  }
+/*div.content.photo-post {
+  padding: 0 0 30px 0;
+  margin:0 0 70px 0;
+}
+  div.content.photo-post p, div.content.photo-post iframe {
+    padding: 40px 40px 0 40px;
+    margin:0;
+  }
+  div.content.photo-post img {
+    display:block;
+    padding:0 0 10px 0;
+    margin:0;
+  }
+  div.content.photo-post p.datetime {
+    color:#ccc;
+  }*/
+
+/* --------------------------------------------------------------------------------------------- */
+/* posts */
+
+div.post {
+  padding-bottom: 0em;
+  /*margin-bottom:-70px;*/
+  page-break-before: always;
+}
+  div.post.single, div.post:last-child { border-bottom:none; }
+  /*div.post h1:first-child, div.post h2:first-child { margin-top:0; }
+  div.post h2.title, div.post h1:first-child { font-size:42px; }*/
+  /*div.post h1 { margin-top: 1.618em; }*/
+  
+  div.post actions, div.post info {
+    color: #ccc;
+  }
+  
+  div.post actions {
+    display:inline-block;
+    float:right;
+  }
+  
+  div.post info {
+    display:inline-block;
+    /*xbackground:#DDF5EB;
+    xborder-left:2px solid rgba(0,0,0,0.2);*/
+    border:1px solid rgba(0,0,0,0.05);
+    border-left:none; border-right:none;
+    padding:8px 0px 8px 60px;
+    margin-left:-60px;
+    margin-bottom:3em;
+  }
+  div.post.photo info {
+    margin:0;
+    padding:0;
+    border:0;
+    display:block;
+  }
+  
+  div.post info.after {
+    margin-top:30px;
+    margin-right:-60px;
+    margin-bottom:0;
+    padding-top:25px;
+    padding-right:60px;
+    padding-bottom:25px;
+    opacity:0.6;
+    border-color:rgba(0,0,0,0.08);
+    border-bottom:none;
+  }
+  div.post info.after:hover {
+    opacity:1;
+  }
+
+  div.post iframe[width="640"] {
+    zoom:0.87;
+  }
+
+
+/* prettyprint */
+pre { color:black; }
+pre .str { color: #080; }
+pre .kwd { color: #000; font-weight: 500; }
+pre .com { color: #999; font-style: italic; }
+pre .typ { color: #349; }
+pre .lit { color: #066; }
+pre .pun, div.post pre .opn, div.post pre .clo { color: #660; }
+pre .pln { color: #000; }
+pre .tag { color: #008; }
+pre .atn { color: #606; }
+pre .atv { color: #080; }
+pre .dec { color: #606; }
+/* Use higher contrast and font-styling for printable form. */
+@media print {
+  pre .str { color: #060; }
+  pre .kwd { color: #006; font-weight: bold; }
+  pre .com { color: #999; font-style: italic; }
+  pre .typ { color: #404; font-weight: bold; }
+  pre .lit { color: #044; }
+  pre .pun, div.post pre .opn, div.post pre .clo {
+    color: #440;
+  }
+  pre .pln { color: #000; }
+  pre .tag { color: #006; font-weight: bold; }
+  pre .atn { color: #404; }
+  pre .atv { color: #060; }
+}
+
+/* meta */
+div.meta { margin:1em 0; }
+  div.meta p, div.meta .item { margin:0; }
+  div.meta .item, div.meta .tag {
+    background-repeat:no-repeat;
+    background-position:0 0.36em;
+    padding-left:15px;
+    color:black;
+    opacity:0.4;
+    display:block;
+    float:left;
+    margin-left:2em;
+  }
+  div.meta .item:hover { opacity:1.0; }
+  div.meta .item:first-child { margin-left:0; }
+  div.meta .item a, div.meta a.item, div.meta .item a:hover,
+      div.meta a.item:hover {
+    color:inherit;
+  }
+  div.meta .item.reblogged {
+    background-image:
+        url(http://static.tumblr.com/9njdies/592l8jd17/reblogged.png);
+  }
+  div.meta .item.tags { padding-left:0; }
+    div.meta .tag {
+      margin-left:1em;
+      margin-right:0;
+      opacity:1.0;
+      background-image:
+          url(http://static.tumblr.com/9njdies/YO7l8jd2b/tag.png);
+    }
+    div.meta .tag:first-child { margin-left:0; }
+  div.meta .item.time {
+    background-image:
+        url(http://static.tumblr.com/9njdies/zkFl8jd2w/time.png);
+    float:right;
+  }
+  div.meta .item.note-count {
+    float:right;
+    background-image:
+        url(http://static.tumblr.com/9njdies/ykvl8nmzz/note-count.png);
+  }
+  div.meta .item.dsq-comment-count {
+    float:right;
+    background-image:
+        url(http://static.tumblr.com/9njdies/dbPl8uqid/comment-count.png);
+    display:none;
+  }
+
+footer {
+  color:#999;
+  display: block;
+  margin:0;
+  padding:0 0 1em 0;
+  text-align: center;
+}
+  footer img.cc {
+    display: inline-block;
+    vertical-align: -0.2em;
+    border: none;
+    width:1em;
+    height:1em;
+    opacity:0.4;
+  }
+  footer a.cc:hover {
+    text-decoration: none;
+  }
+  footer a.cc:hover img.cc {
+    opacity:1;
+  }
+  footer a:link {
+    color:#778;
+  }
+
+/* Viewport size */
+
+@media screen and (min-width: 480px) {
+  body { zoom: 0.8; }
+}
+@media screen and (min-width: 680px) {
+  body { zoom: 0.9; width: 680px; }
+  header { margin:0; }
+  footer { margin:5% 0; }
+}
+@media screen and (min-width: 780px) {
+  body { zoom: 1.3; }
+}
+
+	</style>
+  </head>
+  	<body>
+  	<div class="container">
+    	<div class="row">
+        <div class=" col-xs-12 col-md-2 navigation">
+        
+        <ul class="navigation nav nav-pills nav-stacked">
+        <li class="active"><a href="/"><span class="glyphicon glyphicon-home"></span><span class="hidden">Home</span></a></li>
+        <li> <a href="#"><span class="glyphicon glyphicon-user"></span> <span class="hidden"> About me </span></a></li>
+        <li> <a href="#"><span class="glyphicon glyphicon-briefcase"></span><span class="hidden"> Projects </span></a></li>
+        <li> <a href="#"><span class="glyphicon glyphicon-phone-alt"></span><span class="hidden"> Contacts </span></a></li>
+        </ul>
+        
+        </div>
+    	<div class="milieu col-xs-12 col-md-8">
+        <div class="presentation">
+		  <h2> From Kinshasa To Silicon Valley: Following my dream! </h2>
+          <p> Here I will blog about my journey towards Silicon Valley, my failures, successes, everything I learn on my way. Hopefully those will help someone else to follow his dreams too! </p>  
+        </div>
+        <div class="contenu">
+        
+        <p> {{ content }} </p>
+       	{% if paginator.page %}
+    <div id="paginator" class="content">
+      {% if paginator.next_page %}
+      <a href="/page{{ paginator.next_page }}/">Older entries</a>
+      {% endif %}
+      {% if paginator.previous_page %}
+      <a href="/page{{ paginator.previous_page }}/">Newer entries</a>
+      {% endif %}
+    </div>
+    {% endif %}
+        </div>
+       
+        </div>
+        <div class="sidebar col-xs-12 col-md-2">
+        </div>
+         
+    </div>
+    {% unless page.no_footer %}
+    <center>
+    <footer>
+      <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US" class="cc"><img src="/images/cc-cc.png" class="cc">
+        <img src="/images/cc-by.png" class="cc"></a>
+        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons License</a>
+      </p>
+    </footer>
+    </center>
+    {% endunless %}
+    </div>
+    
+    
+    {% include prettify.html %}
+    {% include analytics.html %}
+  </body>
+</html>
