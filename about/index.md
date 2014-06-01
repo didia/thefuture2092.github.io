@@ -8,7 +8,8 @@ My name is Aristote Diasonama. I'm a congolese software engineering student at L
 
 I'm passionate about technology, dance(I know nothing about dance though, I just dance!) and video games!
 
-I am a cofounder at <a href="http://www.eventbuck.com">EventBuck </a> and also work as a part-time web developper at Laval University in the <a href="http://www.logaplus.com">Loga Plus </a> project's team.
+I was a cofounder at <a href="http://www.eventbuck.com">EventBuck </a> and also worked as a part-time web developper at Laval University in the <a href="http://www.logaplus.com">Loga Plus </a> project's team.
+Now I work as a software engineer intern <a href="https://www.wantedanalytics.com">WANTED Technologies </a>
 
 More information can be found through [LinkedIn](http://www.linkedin.com/in/diasonama).
 
