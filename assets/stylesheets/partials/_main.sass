@@ -1,0 +1,84 @@
+body
+  padding-top : $body-padding-top
+  background-color: #f0ffff
+
+.image-row
+  text-align : center
+  img
+    border-radius : 50%
+    height : 2px
+    box-shadow: 0 0 1em #87cefa
+    -animation: spin 2s ease-out forwards
+    -webkit-animation: spin2 2s ease-out forwards
+    
+    &:hover
+      box-shadow: 0 0 1em red
+
+.name
+
+  color : #33536d
+  font-size : 30px
+  font-family: 'Lobster Two', cursive
+  line-height : 41px
+  opacity : 0
+  -webkit-animation: show 1s ease-out 2.5s forwards
+    
+.motto
+  overflow : hidden
+  font-size : 1.6em
+  font-family: 'Indie Flower', cursive
+  span
+    font-size : 1.4em
+    -webkit-animation : show .4s linear forwards
+    opacity : 0
+
+    &:nth-child(2)
+      -webkit-animation-delay: 4.5s
+    &:nth-child(4)
+      -webkit-animation-delay: 5.6s
+
+  a
+    opacity : 0
+    -webkit-animation : show .7s ease-out forwards
+    
+    &:first-child
+      -webkit-animation-delay: 3.5s
+
+    &:nth-child(3)
+      -webkit-animation-delay: 4.6s
+
+    &:last-child
+      -webkit-animation-delay: 5.7s
+
+
+@-webkit-keyframes spin2 
+  from
+    height: 2px
+    -webkit-transform: rotate(0deg)
+
+  80%
+    position : fixed
+    top: 50%
+    height : 20px
+    -webkit-transform: rotate(9180deg)
+  to 
+    height : 200px
+    -webkit-transform: rotate(9180deg)
+
+@keyframes spin 
+  from 
+    height : 2px 
+    transform: scale(1) rotate(0deg)
+  90%
+    height : 150px
+    transform: scale(1) rotate(16380deg)
+  to
+    height : 200px
+    transform: scale(1) rotate(0deg)
+
+
+@-webkit-keyframes show
+  from 
+    opacity: 0
+  to
+    opacity: 1
