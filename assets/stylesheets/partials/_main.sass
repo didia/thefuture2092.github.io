@@ -2,14 +2,20 @@ body
   padding-top : $body-padding-top
   background-color: #f0ffff
 
+.social
+  opacity : 0
+  animation: show 1s ease-out $name-delay+1s+0.3s+3*0.7s forwards
+  img
+    height : 30px
+    margin-right: 10px
 .image-row
   text-align : center
   img
     border-radius : 50%
     height : 2px
     box-shadow: 0 0 1em #87cefa
-    -animation: spin 2s ease-out forwards
-    -webkit-animation: spin2 2s ease-out forwards
+ 
+    animation: spin $spin-duration ease-out forwards, blink ease-in-out 10s infinite
     
     &:hover
       box-shadow: 0 0 1em red
@@ -21,64 +27,81 @@ body
   font-family: 'Lobster Two', cursive
   line-height : 41px
   opacity : 0
-  -webkit-animation: show 1s ease-out 2.5s forwards
+  animation: show 1s ease-out $name-delay forwards
     
 .motto
   overflow : hidden
   font-size : 1.6em
   font-family: 'Indie Flower', cursive
+  color : #337ab7
+  
   span
-    font-size : 1.4em
-    -webkit-animation : show .4s linear forwards
+    animation : show .7s ease-out forwards
     opacity : 0
 
-    &:nth-child(2)
-      -webkit-animation-delay: 4.5s
-    &:nth-child(4)
-      -webkit-animation-delay: 5.6s
-
-  a
-    opacity : 0
-    -webkit-animation : show .7s ease-out forwards
-    
     &:first-child
-      -webkit-animation-delay: 3.5s
-
+      animation-delay: $name-delay+1s+0.3s
+    
+    &:nth-child(2)
+      animation-delay: $name-delay+1s+0.3s+0.3s
+    
+    &:nth-child(4)
+      animation-delay: $name-delay+1s+0.3s+0.7s+0.3s
+    
     &:nth-child(3)
-      -webkit-animation-delay: 4.6s
+      animation-delay: $name-delay+1s+0.3s+0.7s
 
     &:last-child
-      -webkit-animation-delay: 5.7s
+      animation-delay: $name-delay+1s+0.3s+2*0.7s
+    
+  .separator
+    animation : show $show-duration linear forwards, separator-blink ease-in-out 30s infinite
+    font-size : 1.4em
+    color : #ef3d47
 
 
-@-webkit-keyframes spin2 
+
+@keyframes spin 
   from
     height: 2px
-    -webkit-transform: rotate(0deg)
+    transform: rotate(0deg)
 
   80%
     position : fixed
     top: 50%
     height : 20px
-    -webkit-transform: rotate(9180deg)
+    transform: rotate(9180deg)
   to 
     height : 200px
-    -webkit-transform: rotate(9180deg)
-
-@keyframes spin 
-  from 
-    height : 2px 
-    transform: scale(1) rotate(0deg)
-  90%
-    height : 150px
-    transform: scale(1) rotate(16380deg)
-  to
-    height : 200px
-    transform: scale(1) rotate(0deg)
+    transform: rotate(9180deg)
 
 
-@-webkit-keyframes show
+@keyframes show
   from 
     opacity: 0
   to
     opacity: 1
+
+@keyframes blink
+  from
+    box-shadow: 0 0 1em #87cefa
+  15%
+    box-shadow: 0 0 1em #ef3d47
+  50%
+    box-shadow: 0 0 1em #FFFFE0
+  85%
+    box-shadow: 0 0 1em #87cefa
+  to
+    box-shadow: 0 0 1em #87cefa
+
+@keyframes separator-blink
+  from
+    color: blue
+  15%
+    color: red
+  50%
+    color: green
+  85%
+    color: green
+  to
+    color: blue
