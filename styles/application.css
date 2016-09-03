@@ -5396,12 +5396,12 @@ body {
     position: fixed;
     top: 50%;
     height: 20px;
-    -webkit-transform: rotate(9180deg);
-            transform: rotate(9180deg); }
+    -webkit-transform: rotate(9000deg);
+            transform: rotate(9000deg); }
   to {
     height: 200px;
-    -webkit-transform: rotate(9180deg);
-            transform: rotate(9180deg); } }
+    -webkit-transform: rotate(9000deg);
+            transform: rotate(9000deg); } }
 
 @keyframes spin {
   from {
@@ -5412,12 +5412,12 @@ body {
     position: fixed;
     top: 50%;
     height: 20px;
-    -webkit-transform: rotate(9180deg);
-            transform: rotate(9180deg); }
+    -webkit-transform: rotate(9000deg);
+            transform: rotate(9000deg); }
   to {
     height: 200px;
-    -webkit-transform: rotate(9180deg);
-            transform: rotate(9180deg); } }
+    -webkit-transform: rotate(9000deg);
+            transform: rotate(9000deg); } }
 @-webkit-keyframes show {
   from {
     opacity: 0; }
